@@ -2,7 +2,7 @@ package com.jdriven.stateless.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.facebook.api.Facebook;
-import org.springframework.social.facebook.api.FacebookProfile;
+import org.springframework.social.facebook.api.User;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +14,7 @@ public class FacebookController {
     Facebook facebook;
 
     @RequestMapping(value = "/api/facebook/details", method = RequestMethod.GET)
-    public FacebookProfile getSocialDetails() {
+    public User getSocialDetails() {
         return facebook.userOperations().getUserProfile();
     }
 }

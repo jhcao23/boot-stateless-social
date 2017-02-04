@@ -49,7 +49,11 @@ public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurer
 			}
 		});
 
-		http.exceptionHandling().and().anonymous().and().servletApi().and().headers().cacheControl().and()
+		http.exceptionHandling()
+			.and().anonymous()
+			.and().servletApi()
+			.and().headers().cacheControl().and()
+			.and()
 				.authorizeRequests()
 
 				//allow anonymous font and template requests
@@ -68,7 +72,8 @@ public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurer
 
 				//all other request need to be authenticated
 				.antMatchers(HttpMethod.GET, "/api/users/current/details").hasRole("USER")
-				.anyRequest().hasRole("USER").and()
+				.anyRequest().hasRole("USER")
+			.and()
 
 				// add custom authentication filter for complete stateless JWT based authentication
 				.addFilterBefore(statelessAuthenticationFilter, AbstractPreAuthenticatedProcessingFilter.class)

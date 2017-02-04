@@ -1,9 +1,9 @@
 buildscript {
   dependencies {
-    classpath('org.springframework.boot:spring-boot-gradle-plugin:1.2.0.M1')
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.1.RELEASE")
   }
   repositories {
-    mavenLocal()	
+    mavenLocal()
     mavenCentral()
     maven {url 'http://repo.spring.io/milestone'}
     maven {url 'http://repo.spring.io/release'}
@@ -13,23 +13,23 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'spring-boot'
+apply plugin: 'org.springframework.boot'
 
 jar {
   baseName = 'boot-stateless-social'
-  sourceCompatibility = 1.7
-  targetCompatibility = 1.7
+  sourceCompatibility = 1.8
+  targetCompatibility = 1.8
 }
 
 eclipse {
   jdt {
-    sourceCompatibility = 1.7
-    targetCompatibility = 1.7
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
   }
 }
 
 repositories {
-  mavenLocal()	
+  mavenLocal()
   mavenCentral()
   maven {url 'http://repo.spring.io/milestone'}
   maven {url 'http://repo.spring.io/release'}
@@ -42,11 +42,10 @@ dependencies {
   compile('org.springframework.boot:spring-boot-starter-data-jpa')
   compile('org.springframework.boot:spring-boot-starter-security')
   compile('org.springframework.boot:spring-boot-starter-social-facebook')
-  compile('org.springframework.social:spring-social-security:1.1.0.RELEASE')
+  compile('org.springframework.social:spring-social-security')
   compile('org.hibernate:hibernate-validator')
 
   testCompile('org.springframework.boot:spring-boot-starter-test')
 
-  //runtime('org.postgresql:postgresql:9.2-1004-jdbc4')
   runtime('com.h2database:h2')
 }
