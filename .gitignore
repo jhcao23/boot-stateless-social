@@ -1,4 +1,7 @@
 /.gradle/
+/.settings/
+/.project
+/.classpath
 /build/
 /bin/
 /src/main/resources/application.properties
