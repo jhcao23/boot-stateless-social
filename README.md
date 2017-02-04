@@ -1,18 +1,17 @@
 boot-stateless-social
 ===================
-Example project integrating https://github.com/Robbert1/boot-stateless-auth with OAuth 2 based social login with facebook.
+Folked from https://github.com/Robbert1/boot-stateless-social
 
-Facebook expects the app to run under http://socialshowcase.com(:8080).  
-Therefore you need to add the following line to your hosts file for testing it locally:  
-127.0.0.1  socialshowcase.com
+Example project integrating Spring Security with Spring Social 
+OAuth 2 based social login with facebook.
 
-The build files and application.properties include commented out configuration for postgresql, mostly for testing behavior across server reboots.
+Facebook expects the app to run under http://localhost:8080.  
 
-Needs Gradle 2 or maven 3 and JDK 7
+You must change your facebook app key and secret etc in application.properties
 
-build with `gradle build`  
-run with `gradle run`
+Needs Gradle 3 and JDK 8
 
-or go with `mvn spring-boot:run`
+build with `gradle clean build`  
+run with `gradle bootRun`
 
 
