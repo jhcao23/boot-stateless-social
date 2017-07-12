@@ -1,7 +1,9 @@
 package com.jdriven.stateless.security;
 
 import static javax.xml.bind.DatatypeConverter.printBase64Binary;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.security.SecureRandom;
 import java.util.Date;
@@ -11,6 +13,9 @@ import org.junit.Test;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jdriven.stateless.security.model.User;
+import com.jdriven.stateless.security.model.UserRole;
+import com.jdriven.stateless.security.service.TokenHandler;
 
 public class TokenHandlerTest {
 
